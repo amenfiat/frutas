@@ -1,0 +1,10 @@
+.padre {
+  /* display: flex; */
+  flex-direction: row;
+}
+
+.tamaño-img {
+  width: 250px;
+  height: 250px;
+  border-radius: 5px;
+}

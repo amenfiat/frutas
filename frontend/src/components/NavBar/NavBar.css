@@ -1,0 +1,16 @@
+.navi {
+  width: 100%;
+  justify-content: space-evenly;
+}
+
+.leal {
+  text-decoration: none;
+  font-size: 17px;
+  /* border: 0; */
+  color: white;
+}
+
+.item {
+  color: #ff9f00;
+  margin-right: 20px;
+}
