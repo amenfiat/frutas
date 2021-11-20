@@ -1,16 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import ShoppingBasketIcon from "@mui/icons-material/ShoppingBasket";
 import StorefrontIcon from "@mui/icons-material/Storefront";
 import SearchIcon from "@mui/icons-material/Search";
-import { useStateValue } from '../../store/StateProvider/StateProvider';
+import { useStateValue } from "../../store/StateProvider/StateProvider";
 import "./NavStore.css";
 
 import { NavBar } from "../NavBar/NavBar";
 import { Navbar, Container, Nav } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
+import Search from "../search/search";
+
 const NavStore = () => {
   const [{ basket }] = useStateValue();
+  const { search } = window.location;
+  const query = new URLSearchParams(search).get("s");
+  const [searchQuery, setSearchQuery] = useState(query || "");
   return (
     <>
       <Navbar collapseOnSelect expand="lg" variant="dark" className="header">
@@ -24,13 +29,19 @@ const NavStore = () => {
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto nav__color">
-              <div className="header__search">
+              {/* <div className="header__search">
                 <input
                   type="text"
                   placeholder="Buscar en tienda"
                   className="header__searchInput"
                 />
                 <SearchIcon className="header__searchIcon" />
+              </div> */}
+              <div className="header__search">
+                <Search
+                  searchQuery={searchQuery}
+                  setSearchQuery={setSearchQuery}
+                />
               </div>
               <div className="header__nav">
                 <div className="nav__item">
@@ -41,10 +52,16 @@ const NavStore = () => {
                   <span className="nav__itemLineOne">Your</span>
                   <span className="nav__itemLineTwo">Shop</span>
                 </div>
-                <Link to="/checkout" style={{ textDecoration: "none" }} className="nav__itemBasket">
+                <Link
+                  to="/checkout"
+                  style={{ textDecoration: "none" }}
+                  className="nav__itemBasket"
+                >
                   {/* <div > */}
                   <ShoppingBasketIcon />
-                  <span className="nav__itemLineTwo nav__basketCount">{basket.length}</span>
+                  <span className="nav__itemLineTwo nav__basketCount">
+                    {basket.length}
+                  </span>
                   {/* </div> */}
                 </Link>
               </div>

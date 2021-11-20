@@ -8,8 +8,9 @@ import { Conocenos } from "../pages/Conocenos/Conocenos";
 import { Contacto } from "../pages/Contacto/Contacto";
 import { PageError } from "../pages/PageError/PageError";
 import { NavStore } from "../components/NavStore/NavStore";
-import { Checkout } from '../store/Checkout/Checkout';
+import { Checkout } from "../store/Checkout/Checkout";
 
+import { Searchresult } from "../store/Searchresult/Searchresult";
 function AppRouter() {
   return (
     <div>
@@ -22,6 +23,7 @@ function AppRouter() {
           <Route path="contacto" element={<Contacto />} />
           <Route path="checkout" element={<Checkout />} />
           <Route path="*" element={<PageError />} />
+          <Route path="searchresult" element={<Searchresult />} />
         </Route>
       </Routes>
     </div>
