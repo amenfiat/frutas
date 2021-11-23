@@ -6,6 +6,14 @@ yarn-debug.log*
 yarn-error.log*
 lerna-debug.log*
 
+# Para preservar la seguridad de la clave de BD ya que el repositorio es publico 
+
+frutasexportacion-9c6db-414d96644e62.json
+
+#otras carpetas y archivos del proyecto por ahora innecesarios para subir
+frontend/
+testRequest.js
+
 # Diagnostic reports (https://nodejs.org/api/report.html)
 report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
 
@@ -342,7 +350,3 @@ $RECYCLE.BIN/
 
 # End of https://www.toptal.com/developers/gitignore/api/node,react,windows,macos,linux,visualstudiocode
 
-#archivo de clave
-#firebase
-
-frutasexportacion-9c6db-414d96644e62.json
