@@ -1,9 +1,8 @@
 const dbF = require('./firebase.js');
-
-/**
- *  CRUD DEL PROYECTO
- */
-// De la coleccion fruits
+/*
+************************* CRUD DEL PROYECTO *************************
+*/
+/* ******************** De la coleccion fruits ******************** */
 
 // Crear una fruta en la bd
 function addFruit(fruit, callback){
@@ -24,7 +23,7 @@ function getFruits(callback){
         docs.forEach((fruits) => {
             arrayFruits.push(fruits.data());
         })
-        // cuando llegamos aquí, se deve enviar la respuesta al GET REQUEST
+        // cuando llegamos aquí, se debe enviar la respuesta al GET REQUEST
         callback(arrayFruits);
     });
 }
@@ -77,7 +76,7 @@ function deleteFruit(uid, callback){
     })
 }
 
-// De la coleccion buyers
+/* ******************** De la coleccion buyers ******************** */
 
 // Crear un buyer en la bd
 function addBuyer(buyer, callback){ // buyer = objeto con datos del comprador
@@ -150,9 +149,7 @@ function deleteBuyer(uid, callback){
     })
 }
 
-// --------------
-
-// De la coleccion de paymentDetails
+/* ******************** De la coleccion de paymentDetails ******************** */
 
 // Agregar un nuevo detalle de compra
 function addPaymentDetails(paymentDetails, callback){
@@ -226,7 +223,7 @@ function deletePaymentDetails(uid, callback){
 }
 
 
-/* Cart*/
+/* ******************** De la Colección Cart ******************** */
 
 // Crear un nuevo carrito de compra
 function addCart(cart, callback){
@@ -252,7 +249,7 @@ function getCart(callback){
     });
 }
 
-// Buscar un carrito de compra por nombre
+// Buscar el carrito de compra por nombre
 function searchCart(cartName, callback){
     return dbF.collection('cart').where("buyer", "==", cartName).get()
     .then((carts) => {
@@ -267,7 +264,7 @@ function searchCart(cartName, callback){
     })
 }
 
-// Actualizar totalmente un carrito de compra por id
+// Actualizar totalmente el carrito de compra por id
 function updateCartTotal(uid, cart, callback){
     return dbF.collection("cart").doc(uid).set(cart)
     .then(() => {
@@ -278,7 +275,7 @@ function updateCartTotal(uid, cart, callback){
     })
 }
 
-// Actualizar parcialmente un carrito de compra por id
+// Actualizar parcialmente el carrito de compra por id
 function updateCartPartial(uid, cart, callback){
     return dbF.collection("cart").doc(uid).update(cart)
     .then(() => {
@@ -289,7 +286,7 @@ function updateCartPartial(uid, cart, callback){
     })
 }
 
-// Borrar un carrito de compra por id
+// Borrar el carrito de compra por id
 function deleteCart(uid, callback){
     return dbF.collection("cart").doc(uid).delete()
     .then(() => {
@@ -299,7 +296,6 @@ function deleteCart(uid, callback){
         console.log(`Error to delete cart ${error}`);
     })
 }
-
 
 module.exports = {
     searchFruitByName,
@@ -327,4 +323,3 @@ module.exports = {
     addBuyer,
     deleteBuyer
 };
-
