@@ -4,8 +4,6 @@ import { productest } from "../../assets/data/products";
 const { search } = window.location;
 const query = new URLSearchParams(search).get("s");
 const prodtest = productest();
-if (query) {
-}
 
 const Searchresult = () => {
   if (query) {
@@ -16,14 +14,17 @@ const Searchresult = () => {
     if (!(filteredprod.length > 0)) {
       return (
         <div>
-          <h1>No se hallaron resultados </h1>
+          <h1>No se hallaron resultados para {query}</h1>
         </div>
       );
     } else {
       return (
         <div>
           {filteredprod.map((value) => (
-            <h1>{value.title}</h1>
+            <div>
+              <h1>{value.title}</h1>
+              <p>{value.brief}</p>
+            </div>
           ))}
         </div>
       );
