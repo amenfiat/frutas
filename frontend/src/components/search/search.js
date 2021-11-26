@@ -1,4 +1,8 @@
 import { useNavigate } from "react-router-dom";
+import SearchIcon from "@mui/icons-material/Search";
+
+import "../NavStore/NavStore.css";
+import "./search.css";
 
 const SearchBar = ({ searchQuery, setSearchQuery }) => {
   const history = useNavigate();
@@ -14,18 +18,22 @@ const SearchBar = ({ searchQuery, setSearchQuery }) => {
       autoComplete="off"
       onSubmit={onSubmit}
     >
-      <label htmlFor="header-search">
-        <span className="visually-hidden">Search blog posts</span>
-      </label>
-      <input
-        value={searchQuery}
-        onInput={(e) => setSearchQuery(e.target.value)}
-        type="text"
-        id="header-search"
-        placeholder="Buscar en tienda"
-        name="s"
-      />
-      <button type="submit">Buscar</button>
+      <div className="col-in">
+        <input
+          value={searchQuery}
+          onInput={(e) => setSearchQuery(e.target.value)}
+          type="text"
+          id="header-search"
+          placeholder="Buscar en tienda"
+          name="s"
+          className="header__searchInput"
+        />
+      </div>
+      <div className="col-bt">
+        <button type="submit">
+          <SearchIcon />
+        </button>
+      </div>
     </form>
   );
 };

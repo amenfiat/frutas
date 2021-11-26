@@ -11,7 +11,6 @@ lerna-debug.log*
 frutasexportacion-9c6db-414d96644e62.json
 
 #otras carpetas y archivos del proyecto por ahora innecesarios para subir
-frontend/
 testRequest.js
 
 # Diagnostic reports (https://nodejs.org/api/report.html)
