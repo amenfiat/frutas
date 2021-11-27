@@ -13,6 +13,7 @@ const SearchBar = ({ searchQuery, setSearchQuery }) => {
 
   return (
     <form
+      className="form_search"
       action="/searchresult"
       method="get"
       autoComplete="off"
@@ -30,7 +31,7 @@ const SearchBar = ({ searchQuery, setSearchQuery }) => {
         />
       </div>
       <div className="col-bt">
-        <button type="submit">
+        <button type="submit" className="button_search">
           <SearchIcon />
         </button>
       </div>

@@ -29,11 +29,11 @@
   /* margin-top: 6px; */
 }
 
-form {
+.form_search {
   flex: auto;
 }
 
-button {
+.button_search {
   background-color: #ffc107;
   height: 30px;
   border: 2px;
