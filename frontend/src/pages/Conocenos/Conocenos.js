@@ -1,14 +1,9 @@
 import React from "react";
-import { Navi } from "../../components/agua-images/Navi";
+import { Slides } from "../../components/carousel/Slides";
 
 function Conocenos() {
   return (
-    <div className="container">
-      <p>
-        Conocenos! <span> Es un gusto! </span>
-      </p>
-      <Navi />
-    </div>
+    <Slides />
   );
 }
 
