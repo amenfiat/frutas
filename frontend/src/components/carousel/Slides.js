@@ -10,7 +10,7 @@ import "./Carousel.css";
 function Slides() {
   return (
     <>
-      <Carousel className="bg">
+      <Carousel fade className="bg">
         <Carousel.Item>
           <div className="d-flex bd-highlight example-parent">
             <div className="p-2 flex-fill bd-highlight col-example">
