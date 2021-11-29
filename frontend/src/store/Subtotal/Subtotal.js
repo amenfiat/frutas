@@ -5,8 +5,7 @@ import { useStateValue } from '../StateProvider/StateProvider';
 import { getBasketTotal } from '../StateProvider/reducer';
 
 const Subtotal = () => {
-    const [{ basket }, dispatch] = useStateValue();
-    console.log(dispatch);
+    const [{ basket }] = useStateValue();
     return (
         <div className="subtotal">
             <NumberFormat

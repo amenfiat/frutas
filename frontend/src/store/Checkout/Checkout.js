@@ -20,14 +20,12 @@ const Checkout = () => {
                         {basket.map((item) => (
 
                             <CheckoutProduct
-                                id={item.id}
-                                title={item.title}
+                                key={item.id}
+                                name={item.name}
                                 brief={item.brief}
+                                pricePound={item.pricePound}
                                 image={item.image}
-                                price={item.price}
                             />
-
-
                         ))}
                     </div>
                 </div>

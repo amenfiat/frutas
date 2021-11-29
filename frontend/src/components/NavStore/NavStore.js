@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import ShoppingBasketIcon from "@mui/icons-material/ShoppingBasket";
 import StorefrontIcon from "@mui/icons-material/Storefront";
-import SearchIcon from "@mui/icons-material/Search";
 import { useStateValue } from "../../store/StateProvider/StateProvider";
 import "./NavStore.css";
 
@@ -29,14 +28,6 @@ const NavStore = () => {
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto nav__color">
-              {/* <div className="header__search">
-                <input
-                  type="text"
-                  placeholder="Buscar en tienda"
-                  className="header__searchInput"
-                />
-                <SearchIcon className="header__searchIcon" />
-              </div> */}
               <div className="header__search">
                 <Search
                   searchQuery={searchQuery}
@@ -57,12 +48,10 @@ const NavStore = () => {
                   style={{ textDecoration: "none" }}
                   className="nav__itemBasket"
                 >
-                  {/* <div > */}
                   <ShoppingBasketIcon />
                   <span className="nav__itemLineTwo nav__basketCount">
                     {basket.length}
                   </span>
-                  {/* </div> */}
                 </Link>
               </div>
             </Nav>

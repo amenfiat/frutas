@@ -1,5 +1,4 @@
 import React from "react";
-import { Navi } from "../../components/agua-images/Navi";
 
 function Conocenos() {
   return (
@@ -7,7 +6,6 @@ function Conocenos() {
       <p>
         Conocenos! <span> Es un gusto! </span>
       </p>
-      <Navi />
     </div>
   );
 }
