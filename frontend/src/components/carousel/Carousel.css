@@ -1,0 +1,49 @@
+.imgnormalizada {
+    height: auto;
+    min-height: 25vh;
+    align-items: center;
+    width: auto;
+    max-width: 100%;
+    margin:1px 1px 1px 1px;
+}
+
+.divnormalizado{
+  height: 90vh;
+  min-height: 25vh;
+  align-items: center;
+  max-width: 50%;
+  margin:10px;
+  display: table;
+}
+
+.d-flex div{
+    padding: 0.5rem;
+    border: 0px solid #fff;
+    color: #131111;
+    text-align: center;
+}
+
+.bg {
+    background-image: url("../../assets/images/background1.png");
+    height: 95vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.cardbody{
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.message2{
+  background:#536b4e;
+}
+
+.message1{
+  background:#b46c00;
+}
+
+.message3{
+  background: #be8d7a;
+}
