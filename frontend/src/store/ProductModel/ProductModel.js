@@ -1,8 +1,9 @@
 import React from 'react';
-import './ProductModel.css';
 import { useStateValue } from '../StateProvider/StateProvider';
+import { Card } from 'react-bootstrap';
+import './ProductModel.css';
 
-const ProductModel = ({ id, image, brief, title, price }) => {
+const ProductModel = ({ image, brief, name, pricePound }) => {
 
     const [state, dispatch] = useStateValue();
 
@@ -10,33 +11,52 @@ const ProductModel = ({ id, image, brief, title, price }) => {
         dispatch({
             type: 'ADD_TO_BASKET',
             item: {
-                id: id,
-                title: title,
+                name: name,
                 image: image,
-                price: price,
+                pricePound: pricePound,
                 brief: brief
             },
         });
-        console.log(state);
     }
 
     return (
-        <div className="container">
+        <>
+            <Card style={{ width: '20rem' }} className="container mb-4">
+                <Card.Img variant="top" src={image} alt="img-fruit" className="mt-4" />
+                <Card.Body>
+                    <Card.Title>{name}</Card.Title>
+                    <Card.Text>
+                        {brief}
+                    </Card.Text>
+                    <p className="product__price">
+                        <small>$</small>
+                        <strong>{pricePound}</strong>
+                    </p>
+                    <button onClick={addToBasket}>Add to Basket!</button>
+                </Card.Body>
+            </Card>
+        </>
+    );
+}
+
+export { ProductModel };
+
+
+
+
+/*
+<div className="container">
             <div className="product">
                 <div className="product__info">
-                    <h4>{title}</h4>
+                    <h4>{name}</h4>
                     <p>{brief}</p>
                     <p className="product__price">
                         <small>$</small>
-                        <strong>{price}</strong>
+                        <strong>{pricePound}</strong>
                     </p>
-
                 </div>
                 <img src={image} alt="img-fruit" />
                 <button onClick={addToBasket}>Add to Basket!</button>
             </div>
         </div>
-    );
-}
-
-export { ProductModel };
+*/

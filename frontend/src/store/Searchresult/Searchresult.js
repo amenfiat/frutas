@@ -1,30 +1,34 @@
 import React from "react";
-import { productest } from "../../assets/data/products";
+import { useDatos } from '../../apis/Datos';
+import { ProductModel } from "../ProductModel/ProductModel";
 
 const { search } = window.location;
 const query = new URLSearchParams(search).get("s");
-const prodtest = productest();
 
 const Searchresult = () => {
+  const prodtest = useDatos();
   if (query) {
     const filteredprod = prodtest.filter(function (itm) {
-      const titlelower = itm.title.toLowerCase();
+      const titlelower = itm.name.toLowerCase();
       return titlelower.includes(query.toLowerCase());
     });
     if (!(filteredprod.length > 0)) {
       return (
-        <div>
-          <h1>No se hallaron resultados para {query}</h1>
+        <div className="container">
+          <h3>No se hallaron resultados para: {query}</h3>
         </div>
       );
     } else {
       return (
-        <div>
-          {filteredprod.map((value) => (
-            <div>
-              <h1>{value.title}</h1>
-              <p>{value.brief}</p>
-            </div>
+        <div className="container mt-2">
+          {filteredprod.map((item) => (
+            <ProductModel
+              key={item.id}
+              name={item.name}
+              brief={item.brief}
+              pricePound={item.pricePound}
+              image={item.image}
+            />
           ))}
         </div>
       );
