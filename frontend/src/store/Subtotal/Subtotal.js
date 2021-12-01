@@ -25,7 +25,7 @@ const Subtotal = () => {
                 thousandSeparator={true}
                 prefix={"$"}
             />
-            <button>Proceed to Checkout</button>
+            <button className="rounded btn-info" >Proceed to Checkout</button>
         </div>
     )
 }
