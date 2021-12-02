@@ -5,7 +5,7 @@ import './ProductModel.css';
 
 const ProductModel = ({ image, brief, name, pricePound }) => {
 
-    const [state, dispatch] = useStateValue();
+    const [{ basket }, dispatch] = useStateValue();
 
     const addToBasket = () => {
         dispatch({

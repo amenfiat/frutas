@@ -1,9 +1,10 @@
 import React from 'react';
-import './Checkout.css';
 import Ecomm from '../../assets/images/ecommerce2.jpg';
+import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import { CheckoutProduct } from '../CheckoutProduct/CheckoutProduct';
 import { Subtotal } from '../Subtotal/Subtotal';
 import { useStateValue } from '../StateProvider/StateProvider';
+import './Checkout.css';
 
 const Checkout = () => {
     const [{ basket }] = useStateValue();
@@ -15,18 +16,18 @@ const Checkout = () => {
                     <img src={Ecomm} alt="" className="checkout__ad" />
                     <div>
                         <h4 className="checkout__title">
+                            <AddShoppingCartIcon fontSize="large" className="itemBasket" />
                             Carrito de compras!
                         </h4>
-                        {basket.map((item) => (
-
+                        {basket.map((item, idx) => [
                             <CheckoutProduct
-                                key={item.id}
+                                key={idx}
                                 name={item.name}
                                 brief={item.brief}
                                 pricePound={item.pricePound}
                                 image={item.image}
                             />
-                        ))}
+                        ])}
                     </div>
                 </div>
                 <div className="checkout__right">
