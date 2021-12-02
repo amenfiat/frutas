@@ -43,7 +43,9 @@ const ProductModel = ({ image, brief, name, pricePound, minimunSale }) => {
                         <button className="rounded p-2 btn-light btn-sm" type="button" onClick={() => 
                             setQuantity(quantity + 1)} disabled={quantity >= 10}> + </button>
                     </p>
-                    <button className="rounded" onClick={addToBasket}>Add to Basket!</button>
+                    <p className="d-flex justify-content-center align-items-center mb-3 example-parent">
+                        <button className="addbasket rounded" onClick={addToBasket}>Add to Basket!</button>
+                    </p>
                 </Card.Body>
             </Card>
         </>

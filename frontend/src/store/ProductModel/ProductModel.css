@@ -39,3 +39,11 @@ button {
   height: 100px;
   margin-bottom: 15px;
 }
+
+.addbasket{
+  transition: transform 0.15s;
+}
+
+.addbasket:hover{
+  transform: scale(1.1);
+}
