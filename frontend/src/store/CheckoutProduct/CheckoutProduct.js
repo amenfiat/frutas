@@ -38,7 +38,7 @@ const CheckoutProduct = ({ id, image, brief, pricePound, amount, minimunSale }) 
                             quantity - 1,
                             )} 
                             disabled={quantity <= minimunSale}>
-                             - 
+                                - 
                         </button> 
                         <div>{quantity}</div> 
                         <button className="rounded btn btn-light btn-sm" type="button" onClick={() => 
