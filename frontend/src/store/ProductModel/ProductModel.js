@@ -41,8 +41,9 @@ const ProductModel = ({ image, brief, name, pricePound, minimunSale }) => {
               disabled={quantity <= minimunSale}
             >
               {" "}
-              -
-            </button>{" "}
+              -{" "}
+            </button>
+            {quantity}
             <div className="p-2 bd-highlight">{quantity}</div>
             <button
               className="rounded p-2 btn-light btn-sm"
