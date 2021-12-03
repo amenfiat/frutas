@@ -24,6 +24,7 @@ const Tienda = () => {
                   brief={prod.brief}
                   pricePound={prod.pricePound}
                   image={prod.image}
+                  minimunSale={prod.minimunSale}
                 />
               </Col>
             ))}

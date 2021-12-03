@@ -6,10 +6,15 @@ export const initialState = {
 
 //* selector
 export const getBasketTotal = (basket) => {
-    return (basket?.reduce((amount, item) => item.pricePound + amount, 0));
+    return (basket?.reduce((amount, item) => item.pricePound*item.amount + amount, 0));
 }
 
 const reducer = (state, action) => {
+        const index = state.basket.findIndex(
+                (basketItem) => basketItem.id === action.id
+            );
+        let newBasket = [ ...state.basket];
+    
     switch (action.type) {
         case 'ADD_TO_BASKET':
             return {
@@ -18,10 +23,6 @@ const reducer = (state, action) => {
             }
 
         case 'REMOVE_FROM_BASKET':
-            const index = state.basket.findIndex(
-                (basketItem) => basketItem.id === action.id
-            );
-            let newBasket = [...state.basket];
             if (index >= 0) {
                 newBasket.splice(index, 1);
             } else {
@@ -33,6 +34,20 @@ const reducer = (state, action) => {
                 ...state,
                 basket: newBasket
             }
+        
+        case 'UPDATE_BASKET':
+            if (index >= 0) {
+                newBasket.splice(index, 1);
+            } else {
+                console.warn(
+                    `Can't update product (id: ${action.id}) as its not in the basket`
+                )
+            }
+            return {
+                ...state,
+                basket: newBasket
+            }
+
         default:
             return state;
     }

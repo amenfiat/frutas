@@ -1,11 +1,13 @@
-import React from 'react';
+import React  from 'react';
 import { useStateValue } from '../StateProvider/StateProvider';
 import { Card } from 'react-bootstrap';
 import './ProductModel.css';
+import { useState } from 'react';
 
-const ProductModel = ({ image, brief, name, pricePound }) => {
+const ProductModel = ({ image, brief, name, pricePound, minimunSale }) => {
 
     const [state, dispatch] = useStateValue();
+    const [quantity, setQuantity] = useState(minimunSale);
 
     const addToBasket = () => {
         dispatch({
@@ -14,7 +16,9 @@ const ProductModel = ({ image, brief, name, pricePound }) => {
                 name: name,
                 image: image,
                 pricePound: pricePound,
-                brief: brief
+                brief: brief,
+                amount: quantity,
+                minimunSale: minimunSale
             },
         });
     }
@@ -32,7 +36,16 @@ const ProductModel = ({ image, brief, name, pricePound }) => {
                         <small>$</small>
                         <strong>{pricePound}</strong>
                     </p>
-                    <button onClick={addToBasket}>Add to Basket!</button>
+                    <p className="d-flex justify-content-center align-items-center mb-3 example-parent">
+                        <button className="rounded p-2 btn-light btn-sm" type="button" onClick={() => setQuantity(quantity - 1)} 
+                            disabled={quantity <= minimunSale}> - 
+                        </button> <div className="p-2 bd-highlight">{quantity }</div> 
+                        <button className="rounded p-2 btn-light btn-sm" type="button" onClick={() => 
+                            setQuantity(quantity + 1)} disabled={quantity >= 10}> + </button>
+                    </p>
+                    <p className="d-flex justify-content-center align-items-center mb-3 example-parent">
+                        <button className="addbasket rounded" onClick={addToBasket}>Add to Basket!</button>
+                    </p>
                 </Card.Body>
             </Card>
         </>
