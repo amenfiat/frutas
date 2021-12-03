@@ -28,6 +28,7 @@ const reducer = (state, action) => {
     case "REMOVE_FROM_BASKET":
       if (index >= 0) {
         newBasket.splice(index, 1);
+        getBasketTotal(newBasket);
       } else {
         console.warn(
           `Can't remove product (id: ${action.id}) as its not in the basket!`
