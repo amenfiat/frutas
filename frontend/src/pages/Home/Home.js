@@ -1,6 +1,7 @@
 import React from "react";
 import "./Home.css";
 import Campo3 from "../../assets/videos/campo3.mp4";
+import SignIn from "../../store/SignIn/SignIn";
 
 function Home() {
   return (
@@ -12,6 +13,7 @@ function Home() {
       <video autoPlay loop muted id="bg-video">
         <source src={Campo3} type="video/mp4" />
       </video>
+      <SignIn />
     </div>
   );
 }
