@@ -55,32 +55,3 @@ function NavBar() {
 }
 
 export { NavBar };
-
-/*
-
-<li className="navbar-brand selected nav-link">
-            <Link to="/" className="nav-link">Frutas Exóticas</Link>
-          </li>
-
-<div className="collapse navbar-collapse" id="navbarNav">
-            <ul className="navbar-nav">
-              <li className="nav-item">
-              <Link to="/mision" className="nav-link">Mision</Link>
-              </li>
-              <li className="nav-item">
-              <Link to="/tienda" className="nav-link">Tienda</Link>
-              </li>
-              <li className="nav-item">
-              <Link to="/conocenos" className="nav-link">Conócenos</Link>
-              </li>
-              <li className="nav-item">
-              <Link to="/contacto" className="nav-link">Contacto</Link>
-              </li>
-            </ul>
-          </div>
-
-
-
-
-
-*/

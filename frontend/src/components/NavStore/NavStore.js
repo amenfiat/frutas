@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import ShoppingBasketIcon from "@mui/icons-material/ShoppingBasket";
+import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import StorefrontIcon from "@mui/icons-material/Storefront";
 import { useStateValue } from "../../store/StateProvider/StateProvider";
 import "./NavStore.css";
@@ -48,7 +48,7 @@ const NavStore = () => {
                   style={{ textDecoration: "none" }}
                   className="nav__itemBasket"
                 >
-                  <ShoppingBasketIcon />
+                  <AddShoppingCartIcon />
                   <span className="nav__itemLineTwo nav__basketCount">
                     {basket.length}
                   </span>

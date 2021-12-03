@@ -1,5 +1,5 @@
 import React from "react";
-import { useDatos } from '../../apis/Datos';
+import { useDatos } from "../../apis/Datos";
 import { ProductModel } from "../ProductModel/ProductModel";
 
 const { search } = window.location;
@@ -21,22 +21,22 @@ const Searchresult = () => {
     } else {
       return (
         <div className="container mt-2">
-          {filteredprod.map((item) => (
+          {filteredprod.map((item, idx) => [
             <ProductModel
-              key={item.id}
+              key={idx}
               name={item.name}
               brief={item.brief}
               pricePound={item.pricePound}
               image={item.image}
-            />
-          ))}
+            />,
+          ])}
         </div>
       );
     }
   } else {
     return (
-      <div>
-        <h1>No se fijó ningún parámetro de búsqueda... </h1>
+      <div className="container">
+        <h3>No se fijó ningún parámetro de búsqueda... </h3>
       </div>
     );
   }

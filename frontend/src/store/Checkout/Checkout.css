@@ -1,6 +1,5 @@
 .checkout {
   display: flex;
-  /* padding: 20px; */
   background-color: white;
   height: max-content;
 }
@@ -13,6 +12,7 @@
 
 .checkout__title {
   margin-right: 10px;
+  text-align: center;
   padding: 10px;
   border-bottom: 1px solid lightgray;
 }
@@ -20,4 +20,10 @@
 .checkout__left {
   display: flex;
   flex-direction: column;
+}
+
+.itemBasket {
+  align-items: center;
+  color: #ff9f00;
+  margin-right: 25px;
 }

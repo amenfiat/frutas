@@ -71,13 +71,13 @@
 .nav__itemBasket {
   display: flex;
   align-items: center;
-  color: white;
+  color: #ff9f00;
   margin-right: 50px;
   margin-left: 10px;
 }
 
 .nav__basketCount {
-  margin-left: 18px;
+  margin-left: 10px;
   margin-right: 10px;
 }
 
