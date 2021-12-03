@@ -4,6 +4,7 @@ import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import { CheckoutProduct } from "../CheckoutProduct/CheckoutProduct";
 import { Subtotal } from "../Subtotal/Subtotal";
 import { useStateValue } from "../StateProvider/StateProvider";
+import { Link } from "react-router-dom";
 import "./Checkout.css";
 
 const Checkout = () => {
