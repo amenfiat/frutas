@@ -1,5 +1,5 @@
 import React from "react";
-import { useDatos } from "../../apis/Datos";
+import { useDatos } from "../../apis/crud";
 import { ProductModel } from "../ProductModel/ProductModel";
 
 const { search } = window.location;

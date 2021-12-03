@@ -1,7 +1,7 @@
 import React from "react";
 import { ProductModel } from "../ProductModel/ProductModel";
 import Ecomm from "../../assets/images/ecommerce1.jpg";
-import { useDatos } from "../../apis/Datos";
+import { useDatos } from "../../apis/crud";
 import { Col, Row } from "react-bootstrap";
 import "./Tienda.css";
 

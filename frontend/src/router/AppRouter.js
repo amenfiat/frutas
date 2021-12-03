@@ -1,12 +1,12 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 
-import { Home } from "../pages/Home/Home";
-import { Mision } from "../pages/Mision/Mision";
+import { Home } from "../screens/Home/Home";
+import { Mision } from "../screens/Mision/Mision";
 import { Tienda } from "../store/Tienda/Tienda";
-import { Conocenos } from "../pages/Conocenos/Conocenos";
-import { Contacto } from "../pages/Contacto/Contacto";
-import { PageError } from "../pages/PageError/PageError";
+import { Conocenos } from "../screens/Conocenos/Conocenos";
+import { Contacto } from "../screens/Contacto/Contacto";
+import { NotFound } from "../screens/NotFound/NotFound";
 import { NavStore } from "../components/NavStore/NavStore";
 import { Checkout } from "../store/Checkout/Checkout";
 
@@ -22,7 +22,7 @@ function AppRouter() {
           <Route path="conocenos" element={<Conocenos />} />
           <Route path="contacto" element={<Contacto />} />
           <Route path="checkout" element={<Checkout />} />
-          <Route path="*" element={<PageError />} />
+          <Route path="*" element={<NotFound />} />
           <Route path="searchresult" element={<Searchresult />} />
         </Route>
       </Routes>
